@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 
 function CharCounter() {
-  const [textInput, setTextInput] = useState(""); // Changed to textInput
-  const [charResults, setCharResults] = useState([]); // Changed to charResults
+  const [textInput, setTextInput] = useState(""); 
+  const [charResults, setCharResults] = useState([]); 
 
-  const calculateCharCount = () => { // Changed function name to calculateCharCount
-    const processedText = textInput.replace(/\s+/g, '').toUpperCase(); // Changed to processedText
-    const charFrequency = {}; // Changed to charFrequency
-    const uniqueChars = []; // Changed to uniqueChars
+  const calculateCharCount = () => { 
+    const processedText = textInput.replace(/\s+/g, '').toUpperCase();
+    const charFrequency = {};
+    const uniqueChars = []; 
 
-    // Count the occurrences of each character
+    
     for (let char of processedText) {
       if (!charFrequency[char]) {
         charFrequency[char] = 1;
@@ -18,14 +18,13 @@ function CharCounter() {
       }
     }
 
-    // Prepare the result array to show unique characters and their count
     for (let char of processedText) {
       if (!uniqueChars.some(item => item.character === char)) {
         uniqueChars.push({ character: char, frequency: charFrequency[char] });
       }
     }
 
-    setCharResults(uniqueChars); // Updated variable name
+    setCharResults(uniqueChars); 
   };
 
   return (
