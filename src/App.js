@@ -6,7 +6,7 @@ import CharCounter from './CharCounter';
 function App() {
   return (
     <div className='App'>
-      <CharCounter/>
+      <CharCounter />
     </div>
   );
 }
